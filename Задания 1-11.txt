@@ -1,0 +1,793 @@
+ubuntugb@ubuntugb-VirtualBox:~$ cat > Домашние_животные <<EOL
+
+Собаки
+
+Кошки
+
+Хомяки
+
+EOL
+
+ubuntugb@ubuntugb-VirtualBox:~$ cat > Вьючные_животные <<EOL
+
+Лошади
+
+Верблюды
+
+Осли
+
+EOL
+
+ubuntugb@ubuntugb-VirtualBox:~$ cat Домашние_животные Вьючные_животные > Животные
+
+ubuntugb@ubuntugb-VirtualBox:~$ cat Животные
+
+Собаки
+
+Кошки
+
+Хомяки
+
+Лошади
+
+Верблюды
+
+Осли
+
+ubuntugb@ubuntugb-VirtualBox:~$ mv Животные Друзья_человека
+
+ubuntugb@ubuntugb-VirtualBox:~$ cat Друзья_человека
+
+Собаки
+
+Кошки
+
+Хомяки
+
+Лошади
+
+Верблюды
+
+Осли
+
+------- 
+
+
+ubuntugb@ubuntugb-VirtualBox:~$ mkdir Животные                               
+
+ubuntugb@ubuntugb-VirtualBox:~$ mv Друзья_человека Животные/
+
+ubuntugb@ubuntugb-VirtualBox:~$ ls Животные
+
+Друзья_человека
+
+ubuntugb@ubuntugb-VirtualBox:~$ 
+
+
+------- 
+
+ubuntugb@ubuntugb-VirtualBox:~$ wget https://repo.mysql.com//mysql-apt-config_0.8.24-1_all.deb
+
+--2024-09-24 12:36:16--  https://repo.mysql.com//mysql-apt-config_0.8.24-1_all.deb
+
+Распознаётся repo.mysql.com (repo.mysql.com)… 23.46.121.197, 2a02:26f0:9500:10a6::1d68, 2a02:26f0:9500:10b6::1d68
+
+Подключение к repo.mysql.com (repo.mysql.com)|23.46.121.197|:443... соединение установлено.
+
+HTTP-запрос отправлен. Ожидание ответа… 200 OK
+
+Длина: 18048 (18K) [application/x-debian-package]
+
+Сохранение в: ‘mysql-apt-config_0.8.24-1_all.deb’
+
+
+
+mysql-apt-config_0. 100%[===================>]  17,62K  --.-KB/s    за 0s      
+
+
+
+2024-09-24 12:36:16 (41,4 MB/s) - ‘mysql-apt-config_0.8.24-1_all.deb’ сохранён [18048/18048]
+
+
+
+ubuntugb@ubuntugb-VirtualBox:~$ sudo dpkg -i mysql-apt-config_0.8.24-1_all.deb
+
+Выбор ранее не выбранного пакета mysql-apt-config.
+
+(Чтение базы данных … на данный момент установлено 184802 файла и каталога.)
+
+Подготовка к распаковке mysql-apt-config_0.8.24-1_all.deb …
+
+Распаковывается mysql-apt-config (0.8.24-1) …
+
+Настраивается пакет mysql-apt-config (0.8.24-1) …
+
+Warning: apt-key should not be used in scripts (called from postinst maintainerscript of the package mysql-apt-config)
+
+Warning: apt-key is deprecated. Manage keyring files in trusted.gpg.d instead (see apt-key(8)).
+
+OK
+
+ubuntugb@ubuntugb-VirtualBox:~$ sudo apt update
+
+Сущ:1 http://nginx.org/packages/ubuntu jammy InRelease
+
+Сущ:2 https://dl.google.com/linux/chrome/deb stable InRelease                  
+
+Пол:3 http://repo.mysql.com/apt/ubuntu jammy InRelease [25,1 kB]               
+
+Сущ:4 http://security.ubuntu.com/ubuntu jammy-security InRelease               
+
+Сущ:5 https://download.docker.com/linux/ubuntu jammy InRelease                 
+
+Сущ:6 http://archive.ubuntu.com/ubuntu jammy InRelease                         
+
+Сущ:7 http://archive.ubuntu.com/ubuntu jammy-updates InRelease
+
+Сущ:8 http://archive.ubuntu.com/ubuntu jammy-backports InRelease
+
+Ошб:3 http://repo.mysql.com/apt/ubuntu jammy InRelease
+
+  Следующие подписи не могут быть проверены, так как недоступен открытый ключ: NO_PUBKEY B7B3B788A8D3785C
+
+Чтение списков пакетов… Готово
+
+N: Пропускается получение настроенного файла «nginx/binary-i386/Packages», так как репозиторий «http://nginx.org/packages/ubuntu jammy InRelease» не поддерживает архитектуру «i386»
+
+W: Ошибка GPG: http://repo.mysql.com/apt/ubuntu jammy InRelease: Следующие подписи не могут быть проверены, так как недоступен открытый ключ: NO_PUBKEY B7B3B788A8D3785C
+
+E: Репозиторий «http://repo.mysql.com/apt/ubuntu jammy InRelease» не подписан.
+
+N: Обновление из этого репозитория нельзя выполнить безопасным способом, поэтому по умолчанию он отключён.
+
+N: Информацию о создании репозитория и настройках пользователя смотрите в справочной странице apt-secure(8).
+
+W: Цель Packages (stable/binary-amd64/Packages) настроена несколько раз: в /etc/apt/sources.list.d/archive_uri-https_download_docker_com_linux_ubuntu-jammy.list:1 и в /etc/apt/sources.list.d/docker.list:1
+
+W: Цель Packages (stable/binary-all/Packages) настроена несколько раз: в /etc/apt/sources.list.d/archive_uri-https_download_docker_com_linux_ubuntu-jammy.list:1 и в /etc/apt/sources.list.d/docker.list:1
+
+W: Цель Translations (stable/i18n/Translation-ru_RU) настроена несколько раз: в /etc/apt/sources.list.d/archive_uri-https_download_docker_com_linux_ubuntu-jammy.list:1 и в /etc/apt/sources.list.d/docker.list:1
+
+W: Цель Translations (stable/i18n/Translation-ru) настроена несколько раз: в /etc/apt/sources.list.d/archive_uri-https_download_docker_com_linux_ubuntu-jammy.list:1 и в /etc/apt/sources.list.d/docker.list:1
+
+W: Цель Translations (stable/i18n/Translation-en) настроена несколько раз: в /etc/apt/sources.list.d/archive_uri-https_download_docker_com_linux_ubuntu-jammy.list:1 и в /etc/apt/sources.list.d/docker.list:1
+
+W: Цель DEP-11 (stable/dep11/Components-amd64.yml) настроена несколько раз: в /etc/apt/sources.list.d/archive_uri-https_download_docker_com_linux_ubuntu-jammy.list:1 и в /etc/apt/sources.list.d/docker.list:1
+
+W: Цель DEP-11 (stable/dep11/Components-all.yml) настроена несколько раз: в /etc/apt/sources.list.d/archive_uri-https_download_docker_com_linux_ubuntu-jammy.list:1 и в /etc/apt/sources.list.d/docker.list:1
+
+W: Цель DEP-11-icons-small (stable/dep11/icons-48x48.tar) настроена несколько раз: в /etc/apt/sources.list.d/archive_uri-https_download_docker_com_linux_ubuntu-jammy.list:1 и в /etc/apt/sources.list.d/docker.list:1
+
+W: Цель DEP-11-icons (stable/dep11/icons-64x64.tar) настроена несколько раз: в /etc/apt/sources.list.d/archive_uri-https_download_docker_com_linux_ubuntu-jammy.list:1 и в /etc/apt/sources.list.d/docker.list:1
+
+W: Цель DEP-11-icons-hidpi (stable/dep11/icons-64x64@2.tar) настроена несколько раз: в /etc/apt/sources.list.d/archive_uri-https_download_docker_com_linux_ubuntu-jammy.list:1 и в /etc/apt/sources.list.d/docker.list:1
+
+W: Цель CNF (stable/cnf/Commands-amd64) настроена несколько раз: в /etc/apt/sources.list.d/archive_uri-https_download_docker_com_linux_ubuntu-jammy.list:1 и в /etc/apt/sources.list.d/docker.list:1
+
+W: Цель CNF (stable/cnf/Commands-all) настроена несколько раз: в /etc/apt/sources.list.d/archive_uri-https_download_docker_com_linux_ubuntu-jammy.list:1 и в /etc/apt/sources.list.d/docker.list:1
+
+W: Цель Packages (stable/binary-amd64/Packages) настроена несколько раз: в /etc/apt/sources.list.d/archive_uri-https_download_docker_com_linux_ubuntu-jammy.list:1 и в /etc/apt/sources.list.d/docker.list:1
+
+W: Цель Packages (stable/binary-all/Packages) настроена несколько раз: в /etc/apt/sources.list.d/archive_uri-https_download_docker_com_linux_ubuntu-jammy.list:1 и в /etc/apt/sources.list.d/docker.list:1
+
+W: Цель Translations (stable/i18n/Translation-ru_RU) настроена несколько раз: в /etc/apt/sources.list.d/archive_uri-https_download_docker_com_linux_ubuntu-jammy.list:1 и в /etc/apt/sources.list.d/docker.list:1
+
+W: Цель Translations (stable/i18n/Translation-ru) настроена несколько раз: в /etc/apt/sources.list.d/archive_uri-https_download_docker_com_linux_ubuntu-jammy.list:1 и в /etc/apt/sources.list.d/docker.list:1
+
+W: Цель Translations (stable/i18n/Translation-en) настроена несколько раз: в /etc/apt/sources.list.d/archive_uri-https_download_docker_com_linux_ubuntu-jammy.list:1 и в /etc/apt/sources.list.d/docker.list:1
+
+W: Цель DEP-11 (stable/dep11/Components-amd64.yml) настроена несколько раз: в /etc/apt/sources.list.d/archive_uri-https_download_docker_com_linux_ubuntu-jammy.list:1 и в /etc/apt/sources.list.d/docker.list:1
+
+W: Цель DEP-11 (stable/dep11/Components-all.yml) настроена несколько раз: в /etc/apt/sources.list.d/archive_uri-https_download_docker_com_linux_ubuntu-jammy.list:1 и в /etc/apt/sources.list.d/docker.list:1
+
+W: Цель DEP-11-icons-small (stable/dep11/icons-48x48.tar) настроена несколько раз: в /etc/apt/sources.list.d/archive_uri-https_download_docker_com_linux_ubuntu-jammy.list:1 и в /etc/apt/sources.list.d/docker.list:1
+
+W: Цель DEP-11-icons (stable/dep11/icons-64x64.tar) настроена несколько раз: в /etc/apt/sources.list.d/archive_uri-https_download_docker_com_linux_ubuntu-jammy.list:1 и в /etc/apt/sources.list.d/docker.list:1
+
+W: Цель DEP-11-icons-hidpi (stable/dep11/icons-64x64@2.tar) настроена несколько раз: в /etc/apt/sources.list.d/archive_uri-https_download_docker_com_linux_ubuntu-jammy.list:1 и в /etc/apt/sources.list.d/docker.list:1
+
+W: Цель CNF (stable/cnf/Commands-amd64) настроена несколько раз: в /etc/apt/sources.list.d/archive_uri-https_download_docker_com_linux_ubuntu-jammy.list:1 и в /etc/apt/sources.list.d/docker.list:1
+
+W: Цель CNF (stable/cnf/Commands-all) настроена несколько раз: в /etc/apt/sources.list.d/archive_uri-https_download_docker_com_linux_ubuntu-jammy.list:1 и в /etc/apt/sources.list.d/docker.list:1
+
+ubuntugb@ubuntugb-VirtualBox:~$ sudo apt install mysql-server
+
+Чтение списков пакетов… Готово
+
+Построение дерева зависимостей… Готово
+
+Чтение информации о состоянии… Готово         
+
+Уже установлен пакет mysql-server самой новой версии (8.0.39-0ubuntu0.22.04.1).
+
+Обновлено 0 пакетов, установлено 0 новых пакетов, для удаления отмечено 0 пакетов, и 88 пакетов не обновлено.
+
+ubuntugb@ubuntugb-VirtualBox:~$ mysql --version
+
+mysql  Ver 8.0.39-0ubuntu0.22.04.1 for Linux on x86_64 ((Ubuntu))
+
+
+------- 
+
+ubuntugb@ubuntugb-VirtualBox:~$ 
+
+ubuntugb@ubuntugb-VirtualBox:~$ wget http://ftp.debian.org/debian/pool/main/h/htop/htop_3.2.2-2_amd64.deb
+
+--2024-09-24 12:45:58--  http://ftp.debian.org/debian/pool/main/h/htop/htop_3.2.2-2_amd64.deb
+
+Распознаётся ftp.debian.org (ftp.debian.org)… 151.101.246.132, 2a04:4e42:3a::644
+
+Подключение к ftp.debian.org (ftp.debian.org)|151.101.246.132|:80... соединение установлено.
+
+HTTP-запрос отправлен. Ожидание ответа… 200 OK
+
+Длина: 152412 (149K) [application/vnd.debian.binary-package]
+
+Сохранение в: ‘htop_3.2.2-2_amd64.deb’
+
+
+
+htop_3.2.2-2_amd64. 100%[===================>] 148,84K   619KB/s    за 0,2s    
+
+
+
+2024-09-24 12:45:58 (619 KB/s) - ‘htop_3.2.2-2_amd64.deb’ сохранён [152412/152412]
+
+
+
+ubuntugb@ubuntugb-VirtualBox:~$ sudo dpkg -i htop_3.2.2-2_amd64.deb
+
+[sudo] пароль для ubuntugb: 
+
+(Чтение базы данных … на данный момент установлено 184817 файлов и каталогов.)
+
+Подготовка к распаковке htop_3.2.2-2_amd64.deb …
+
+Распаковывается htop (3.2.2-2) на замену (3.0.5-7build2) …
+
+Настраивается пакет htop (3.2.2-2) …
+
+Обрабатываются триггеры для mailcap (3.70+nmu1ubuntu1) …
+
+Обрабатываются триггеры для gnome-menus (3.36.0-1ubuntu3) …
+
+Обрабатываются триггеры для desktop-file-utils (0.26-1ubuntu3) …
+
+Обрабатываются триггеры для hicolor-icon-theme (0.17-2) …
+
+Обрабатываются триггеры для man-db (2.10.2-1) …
+
+ubuntugb@ubuntugb-VirtualBox:~$ sudo dpkg -r htop
+
+(Чтение базы данных … на данный момент установлено 184818 файлов и каталогов.)
+
+Удаляется htop (3.2.2-2) …
+
+Обрабатываются триггеры для man-db (2.10.2-1) …
+
+Обрабатываются триггеры для hicolor-icon-theme (0.17-2) …
+
+Обрабатываются триггеры для mailcap (3.70+nmu1ubuntu1) …
+
+Обрабатываются триггеры для gnome-menus (3.36.0-1ubuntu3) …
+
+Обрабатываются триггеры для desktop-file-utils (0.26-1ubuntu3) …
+
+ubuntugb@ubuntugb-VirtualBox:~$ 
+
+
+
+------- 
+
+
+ubuntugb@ubuntugb-VirtualBox:~$ sudo mysql -u root -p
+
+[sudo] пароль для ubuntugb: 
+
+Enter password: 
+
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+
+Your MySQL connection id is 8
+
+Server version: 8.0.39-0ubuntu0.22.04.1 (Ubuntu)
+
+Copyright (c) 2000, 2024, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+
+affiliates. Other names may be trademarks of their respective
+
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> CREATE DATABASE `Друзья_человека`;
+
+Query OK, 1 row affected (0,02 sec)
+
+mysql> SHOW DATABASES;
+
++-------------------------------+
+
+| Database                      |
+
++-------------------------------+
+
+| information_schema            |
+
+| mydatabase                    |
+
+| mysql                         |
+
+| performance_schema            |
+
+| sys                           |
+
+| Друзья_человека               |
+
++-------------------------------+
+
+6 rows in set (0,03 sec)
+
+mysql> USE `Друзья_человека`;
+
+Database changed
+
+mysql> CREATE TABLE domestic_animals (
+
+    ->     id INT AUTO_INCREMENT PRIMARY KEY,
+
+    ->     animal_type VARCHAR(50) NOT NULL
+
+    -> );
+
+Query OK, 0 rows affected (0,04 sec)
+
+mysql> INSERT INTO domestic_animals (animal_type) VALUES ('Собаки');
+
+Query OK, 1 row affected (0,03 sec)
+
+mysql> INSERT INTO domestic_animals (animal_type) VALUES ('Кошки');
+
+Query OK, 1 row affected (0,01 sec)
+
+mysql> INSERT INTO domestic_animals (animal_type) VALUES ('Хомяки');
+
+Query OK, 1 row affected (0,00 sec)
+
+mysql> CREATE TABLE pack_animals (
+
+    ->     id INT AUTO_INCREMENT PRIMARY KEY,
+
+    ->     animal_type VARCHAR(50) NOT NULL
+
+    -> );
+
+Query OK, 0 rows affected (0,07 sec)
+
+mysql> INSERT INTO pack_animals (animal_type) VALUES ('Лошади');
+
+Query OK, 1 row affected (0,01 sec)
+
+mysql> INSERT INTO pack_animals (animal_type) VALUES ('Верблюды');
+
+Query OK, 1 row affected (0,04 sec)
+
+mysql> INSERT INTO pack_animals (animal_type) VALUES ('Осли');
+
+Query OK, 1 row affected (0,02 sec)
+
+mysql> 
+
+
+
+----------	9
+
+
+mysql> CREATE TABLE domestic_animals (
+
+    ->     id INT AUTO_INCREMENT PRIMARY KEY,
+
+    ->     animal_type VARCHAR(50) NOT NULL
+
+    -> );
+
+Query OK, 0 rows affected (0,04 sec)
+
+
+mysql> INSERT INTO domestic_animals (animal_type) VALUES ('Собаки');
+
+Query OK, 1 row affected (0,03 sec)
+
+
+mysql> INSERT INTO domestic_animals (animal_type) VALUES ('Кошки');
+
+Query OK, 1 row affected (0,01 sec)
+
+
+mysql> INSERT INTO domestic_animals (animal_type) VALUES ('Хомяки');
+
+Query OK, 1 row affected (0,00 sec)
+
+
+mysql> CREATE TABLE pack_animals (
+
+    ->     id INT AUTO_INCREMENT PRIMARY KEY,
+
+    ->     animal_type VARCHAR(50) NOT NULL
+
+    -> );
+
+Query OK, 0 rows affected (0,07 sec)
+
+
+mysql> INSERT INTO pack_animals (animal_type) VALUES ('Лошади');
+
+Query OK, 1 row affected (0,01 sec)
+
+
+mysql> INSERT INTO pack_animals (animal_type) VALUES ('Верблюды');
+
+Query OK, 1 row affected (0,04 sec)
+
+
+mysql> INSERT INTO pack_animals (animal_type) VALUES ('Осли');
+
+Query OK, 1 row affected (0,02 sec)
+
+
+mysql> clear
+
+mysql> CREATE TABLE dogs (
+
+    ->     id INT AUTO_INCREMENT PRIMARY KEY,
+
+    ->     name VARCHAR(50) NOT NULL,
+
+    ->     command VARCHAR(100) NOT NULL,
+
+    ->     birth_date DATE NOT NULL
+
+    -> );
+
+Query OK, 0 rows affected (0,03 sec)
+
+
+mysql> CREATE TABLE cats (
+
+    ->     id INT AUTO_INCREMENT PRIMARY KEY,
+
+    ->     name VARCHAR(50) NOT NULL,
+
+    ->     command VARCHAR(100) NOT NULL,
+
+    ->     birth_date DATE NOT NULL
+
+    -> );
+
+Query OK, 0 rows affected (0,06 sec)
+
+
+mysql> CREATE TABLE hamsters (
+
+    ->     id INT AUTO_INCREMENT PRIMARY KEY,
+
+    ->     name VARCHAR(50) NOT NULL,
+
+    ->     command VARCHAR(100) NOT NULL,
+
+    ->     birth_date DATE NOT NULL
+
+    -> );
+
+Query OK, 0 rows affected (0,03 sec)
+
+
+mysql> CREATE TABLE horses (
+
+    ->     id INT AUTO_INCREMENT PRIMARY KEY,
+
+    ->     name VARCHAR(50) NOT NULL,
+
+    ->     command VARCHAR(100) NOT NULL,
+
+    ->     birth_date DATE NOT NULL
+
+    -> );
+
+Query OK, 0 rows affected (0,04 sec)
+
+
+mysql> CREATE TABLE horses (
+
+    ->     id INT AUTO_INCREMENT PRIMARY KEY,
+
+    ->     name VARCHAR(50) NOT NULL,
+
+    ->     command VARCHAR(100) NOT NULL,
+
+    ->     birth_date DATE NOT NULL
+
+    -> );
+
+ERROR 1050 (42S01): Table 'horses' already exists
+
+mysql> CREATE TABLE camels (
+
+    ->     id INT AUTO_INCREMENT PRIMARY KEY,
+
+    ->     name VARCHAR(50) NOT NULL,
+
+    ->     command VARCHAR(100) NOT NULL,
+
+    ->     birth_date DATE NOT NULL
+
+    -> );
+
+Query OK, 0 rows affected (0,39 sec)
+
+
+mysql> CREATE TABLE donkeys (
+
+    ->     id INT AUTO_INCREMENT PRIMARY KEY,
+
+    ->     name VARCHAR(50) NOT NULL,
+
+    ->     command VARCHAR(100) NOT NULL,
+
+    ->     birth_date DATE NOT NULL
+
+    -> );
+
+Query OK, 0 rows affected (0,07 sec)
+
+
+mysql> INSERT INTO dogs (name, command, birth_date) VALUES
+
+    -> ('Бобик', 'Сидеть', '2019-05-12'),
+
+    -> ('Шарик', 'Лежать', '2020-06-23'),
+
+    -> ('Рекс', 'Аппорт', '2018-08-10');
+
+Query OK, 3 rows affected (0,01 sec)
+
+Records: 3  Duplicates: 0  Warnings: 0
+
+
+mysql> INSERT INTO cats (name, command, birth_date) VALUES
+
+    -> ('Мурка', 'Подойди', '2021-04-11'),
+
+    -> ('Барсик', 'Мяукать', '2020-01-05'),
+
+    -> ('Тимон', 'Спать', '2024-06-11');
+
+Query OK, 3 rows affected (0,07 sec)
+
+Records: 3  Duplicates: 0  Warnings: 0
+
+
+mysql> INSERT INTO hamsters (name, command, birth_date) VALUES
+
+    -> ('Снежок', 'Тапать', '2022-03-25'),
+
+    -> ('Пухлик', 'Майнить', '2021-11-09');
+
+Query OK, 2 rows affected (0,02 sec)
+
+Records: 2  Duplicates: 0  Warnings: 0
+
+
+mysql> INSERT INTO horses (name, command, birth_date) VALUES
+
+    -> ('Буцефал', 'Галоп', '2015-05-19'),
+
+    -> ('Зевс', 'Рысью', '2017-09-02');
+
+Query OK, 2 rows affected (0,00 sec)
+
+Records: 2  Duplicates: 0  Warnings: 0
+
+
+mysql> INSERT INTO camels (name, command, birth_date) VALUES
+
+    -> ('Султан', 'Сесть', '2018-12-14'),
+
+    -> ('Сулейман', 'Подняться', '2016-04-05');
+
+Query OK, 2 rows affected (0,01 sec)
+
+Records: 2  Duplicates: 0  Warnings: 0
+
+
+mysql> INSERT INTO donkeys (name, command, birth_date) VALUES
+
+    -> ('Осел', 'Кушать', '2019-10-22'),
+
+    -> ('Шрек', 'Идти', '2018-07-13');
+
+Query OK, 2 rows affected (0,01 sec)
+
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> SELECT * FROM pack_animals;
+
++----+------------------+
+
+| id | animal_type      |
+
++----+------------------+
+
+|  1 | Лошади           |
+
+|  2 | Верблюды         |
+
+|  3 | Осли             |
+
++----+------------------+
+
+3 rows in set (0,00 sec)
+
+
+
+------------ 	10
+
+
+mysql> DELETE FROM camels;
+
+Query OK, 2 rows affected (0,02 sec)
+
+
+mysql> CREATE TABLE horses_and_donkeys (
+
+    ->     id INT AUTO_INCREMENT PRIMARY KEY,
+
+    ->     name VARCHAR(50) NOT NULL,
+
+    ->     command VARCHAR(100) NOT NULL,
+
+    ->     birth_date DATE NOT NULL,
+
+    ->     animal_type VARCHAR(50) NOT NULL
+
+    -> );
+
+Query OK, 0 rows affected (0,06 sec)
+
+
+mysql> INSERT INTO horses_and_donkeys (name, command, birth_date, animal_type)
+
+    -> SELECT name, command, birth_date, 'Лошадь' FROM horses;
+
+Query OK, 2 rows affected (0,02 sec)
+
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> INSERT INTO horses_and_donkeys (name, command, birth_date, animal_type)
+
+    -> SELECT name, command, birth_date, 'Осёл' FROM donkeys;
+
+Query OK, 2 rows affected (0,00 sec)
+
+Records: 2  Duplicates: 0  Warnings: 0
+
+
+mysql> SELECT * FROM horses_and_donkeys;
+
++----+----------------+--------------+------------+--------------+
+
+| id | name           | command      | birth_date | animal_type  |
+
++----+----------------+--------------+------------+--------------+
+
+|  1 | Буцефал        | Галоп        | 2015-05-19 | Лошадь       |
+
+|  2 | Зевс           | Рысью        | 2017-09-02 | Лошадь       |
+
+|  4 | Осел           | Кушать       | 2019-10-22 | Осёл         |
+
+|  5 | Шрек           | Идти         | 2018-07-13 | Осёл         |
+
++----+----------------+--------------+------------+--------------+
+
+4 rows in set (0,00 sec)
+
+
+
+mysql> drop table all_animals;
+
+Query OK, 0 rows affected (0,02 sec)
+
+
+
+mysql> CREATE TABLE all_animals (
+
+    ->     id INT PRIMARY KEY AUTO_INCREMENT,
+
+    ->     name VARCHAR(50),
+
+    ->     birth_date DATE,
+
+    ->     command VARCHAR(100),
+
+    ->     animal_group VARCHAR(100)
+
+    -> );
+
+Query OK, 0 rows affected (0,05 sec)
+
+
+
+mysql> INSERT INTO all_animals (name, birth_date, commands, animal_group)
+
+    -> SELECT name, birth_date, commands, 'dogs' FROM dogs;
+
+ERROR 1054 (42S22): Unknown column 'commands' in 'field list'
+
+mysql> INSERT INTO all_animals (name, birth_date, command, animal_group)
+
+    -> SELECT name, birth_date, command, 'dogs' FROM dogs;
+
+Query OK, 3 rows affected (0,03 sec)
+
+Records: 3  Duplicates: 0  Warnings: 0
+
+
+
+mysql> INSERT INTO all_animals (name, birth_date, command, animal_group)
+
+    -> SELECT name, birth_date, command, 'cats' FROM cats;
+
+Query OK, 3 rows affected (0,00 sec)
+
+Records: 3  Duplicates: 0  Warnings: 0
+
+
+
+mysql> INSERT INTO all_animals (name, birth_date, command, animal_group)
+
+    -> SELECT name, birth_date, command, 'hamsters' FROM hamsters;
+
+Query OK, 2 rows affected (0,06 sec)
+
+Records: 2  Duplicates: 0  Warnings: 0
+
+
+
+mysql> INSERT INTO all_animals (name, birth_date, command, animal_group)
+
+    -> SELECT name, birth_date, command, 'horses_and_donkeys' FROM horses_and_donkeys;
+
+Query OK, 4 rows affected (0,01 sec)
+
+Records: 4  Duplicates: 0  Warnings: 0
+
+
+
+mysql> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
